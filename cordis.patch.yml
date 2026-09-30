@@ -1,0 +1,14 @@
+# dsh-partition-board bundle patch: one insert over the profile tree.
+#
+# 只有当这个包作为 profile 依赖装上时这行才激活
+# （~/.dsh/profiles/web/node_modules 下的 junction + package.json 的 dsh.profile.bundles 条目）。
+#
+# Host 半边在 lib/index.js 注册工具 `partition_board` 与 skill `partition-board`；
+# 浏览器半边由 package.json 的 dsh.client 声明，client/client.js 把画板挂到
+# keyed slot `tool.call.toolview` 上（key = 工具名）。
+#
+# 注意：这是 insert，不要再在自己的 patch 里为同一个 id 写一条顶层 `- id:` 条目，
+# 否则插件会被注册两次。
+- insert:
+    - id: partition-board
+      name: 'dsh-partition-board'

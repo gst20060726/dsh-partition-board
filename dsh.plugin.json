@@ -1,0 +1,9 @@
+{
+  "name": "dsh-partition-board",
+  "description": "分区画板：AI 认为需要跟人确认「怎么分区」或有绘画需求时自主调用；弹出画板，用色卡标注颜色含义、亲手绘出分区（支持模糊边界），未标注/细小分区由 AI 补全并反复确认，确认后的规划回传 AI 按用途解读。工具 `partition_board` + skill `partition-board`。",
+  "version": "1.0.0",
+  "entry": {
+    "name": "dsh-partition-board",
+    "inject": ["tools", "skills"]
+  }
+}

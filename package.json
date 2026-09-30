@@ -1,0 +1,74 @@
+{
+  "name": "dsh-partition-board",
+  "version": "1.0.0",
+  "description": "分区画板：AI 认为需要跟人确认「怎么分区」时自主调用，在浏览器弹出一块画板——用色卡标注颜色的含义、亲手绘出分区（支持模糊边界、缩放平移、边画边写），未标注与细小区域由 AI 补全并反复确认，确认后的规划回传 AI 按用途解读推进项目。An interactive partition board the AI opens when it needs a human to draw the boundaries: colour legend, rect/lasso/brush, feathering, zoom & pan, free-text notes, AI fills the gaps, then the confirmed plan goes back to the model.",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.1.0-rc.6"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client",
+    "skills",
+    "scripts",
+    "tests",
+    "cordis.patch.yml",
+    "dsh.plugin.json",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "category": "extension",
+    "displayName": "分区画板",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check client/client.js",
+    "pretest": "npm run check",
+    "test": "node --test tests/board.test.mjs tests/render.test.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gst20060726/dsh-partition-board.git"
+  },
+  "homepage": "https://github.com/gst20060726/dsh-partition-board#readme",
+  "bugs": {
+    "url": "https://github.com/gst20060726/dsh-partition-board/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin",
+    "canvas",
+    "partition",
+    "regions",
+    "layout",
+    "wireframe",
+    "annotation",
+    "画板",
+    "分区"
+  ]
+}

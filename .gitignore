@@ -1,0 +1,8 @@
+node_modules/
+*.log
+*.tgz
+*.zip
+.DS_Store
+# 调试产物：scripts/decode.mjs 可以随手写出 ASCII 分区图
+*-decode.txt
+*-verify.txt

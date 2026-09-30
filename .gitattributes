@@ -1,0 +1,5 @@
+# 仓库里统一 LF：这是 JS + Markdown 项目，CRLF 混进来只会制造噪音 diff
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.tgz binary
